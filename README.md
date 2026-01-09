@@ -1,17 +1,33 @@
-# FastAPI CRUD Example with JSON Database
+# FastAPI CRUD Examples
 
-This project is a simple **CRUD (Create, Read, Update, Delete) API built with FastAPI in Python**.  
-It is designed as a learning and practice example, using a **JSON file as a mock database** instead of a traditional DBMS.
+This repository contains **multiple FastAPI CRUD example projects**, created for learning and practice purposes.  
+Each project demonstrates how to build a RESTful API using FastAPI with different data persistence approaches.
 
 ---
 
-## 🚀 Features
+## 🚀 Projects Included
 
-- CRUD operations (Create, Read, Update, Delete)
-- RESTful API architecture
-- FastAPI framework
-- JSON file used as a lightweight data store
-- Modular and easy-to-understand project structure
+### 📁 1. FastAPI CRUD with JSON Database
+
+A simple CRUD API that uses a **JSON file as a mock database**, ideal for beginners and quick prototyping.
+
+**Highlights:**
+
+- No external database required
+- Easy to understand and lightweight
+- Focused on FastAPI fundamentals
+
+---
+
+### 📁 2. FastAPI CRUD with PostgreSQL
+
+A more advanced CRUD API that uses **PostgreSQL as a relational database**, suitable for real-world backend development practices.
+
+**Highlights:**
+
+- PostgreSQL integration
+- Database-driven CRUD operations
+- Scalable and closer to production-ready architecture
 
 ---
 
@@ -21,30 +37,49 @@ It is designed as a learning and practice example, using a **JSON file as a mock
 - FastAPI
 - Uvicorn
 - JSON (mock database)
+- PostgreSQL
+- psycopg / SQL tools (depending on implementation)
 
 ---
 
-## 📂 Project Structure
+## 📂 Repository Structure
 
 ```text
 backend/
-├── app/
-│   ├── main.py              # Application entry point
+├── fastapi-json/                              # FastAPI CRUD using JSON as database
+│   ├── main.py                       # Application entry point
 │   │
 │   ├── lib/
-│   │   └── managedb.py      # JSON database management logic
+│   │   └── managedb.py               # JSON database management logic
 │   │
 │   ├── db/
-│   │   └── dbContacts.json  # Mock database (JSON file)
+│   │   └── dbContacts.json           # Mock database (JSON file)
 │   │
-│   └── router/
-│       ├── get_contacts.py      # Get all contacts
-│       ├── get_contact.py       # Get a single contact
-│       ├── post_contacts.py     # Create a new contact
-│       ├── put_contacts.py      # Update an existing contact
-│       └── delete_contacts.py   # Delete a contact
+│   └── router/                       # API route handlers
+│       ├── get_contacts.py           # Get all contacts
+│       ├── get_contact.py            # Get a single contact
+│       ├── post_contacts.py          # Create a new contact
+│       ├── put_contacts.py           # Update an existing contact
+│       └── delete_contacts.py        # Delete a contact
 │
-└── README.md
+├── FASTAPI-POSTGRES/                 # FastAPI CRUD using PostgreSQL
+│   ├── config/
+│   │   └── __init__.py               # Application configuration and settings
+│   │
+│   ├── model/
+│   │   ├── __init__.py
+│   │   └── user_connection.py        # PostgreSQL connection and database logic
+│   │
+│   ├── schema/
+│   │   ├── __init__.py
+│   │   └── user_schema.py            # Pydantic schemas for data validation
+│   │
+│   ├── main.py                       # FastAPI application entry point (PostgreSQL)
+│   └── fastapi-postgres.sql          # SQL script to create database tables
+│
+├── .gitignore
+├── README.md
+
 ```
 
 ## ▶️ How to Run the Project
@@ -82,10 +117,6 @@ http://127.0.0.1:8000/docs
 ```
 
 to access the interactive Swagger UI.
-
-### 📌 Purpose
-
-This project is intended for educational purposes only, to demonstrate how FastAPI works and how CRUD operations can be implemented without the complexity of a real database.
 
 ### ⚠️ Disclaimer
 
